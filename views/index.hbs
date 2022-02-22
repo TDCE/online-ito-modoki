@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="" lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オンラインitoモドキ</title>
+</head>
+
+<body>
+    <h1>{{message}}</h1>
+    <div>
+        <ul id="messages"></ul>
+    </div>
+
+    <div>
+        <input id="message" type="text">
+        <button onclick="handleSubmitNewMessage()">Submit</button>
+    </div>
+
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+        integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+        crossorigin="anonymous"></script>
+    <script src="js/chat-socket.js"></script>
+</body>
+
+</html>
