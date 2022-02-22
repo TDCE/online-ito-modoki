@@ -5,6 +5,9 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "workspaces": [
+    "/server-side"
+  ],
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
