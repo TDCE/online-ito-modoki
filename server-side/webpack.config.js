@@ -4,10 +4,12 @@ const assetsDir = path.resolve(__dirname, 'public/assets');
 
 module.exports = {
   mode: 'development',
-  entry: assetsDir + '/src/app.tsx',
+  entry: {
+    app: assetsDir + '/src/app.tsx',
+  },
   output: {
     path: assetsDir + '/dist',
-    filename: 'app.js',
+    filename: '[name].js',
   },
   module: {
     rules: [
