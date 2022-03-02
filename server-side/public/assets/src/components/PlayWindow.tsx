@@ -92,14 +92,21 @@ const PlayWindow = () => {
   });
 
   return (
-    <div>
-      <button onClick={handlesubmitResetGame}>リセット</button>
+    <div className="container mx-auto">
+      <button
+        className="p-2 bg-gray-500 text-white rounded-xl"
+        onClick={handlesubmitResetGame}
+      >
+        Reset
+      </button>
       {(() => {
         if (isAttend) {
           if (onGame) {
             return (
-              <>
-                <p>参加者</p>
+              <div className="grid place-content-center p-10">
+                <div>
+                  <p className="p-2">参加者</p>
+                </div>
                 {responsePlayerList.map(({ name, id, num }) => {
                   return (
                     <li key={id}>
@@ -107,24 +114,39 @@ const PlayWindow = () => {
                     </li>
                   );
                 })}
-              </>
+              </div>
             );
           }
           return (
-            <>
-              <p>参加者</p>
+            <div className="grid place-content-center p-10">
+              <div>
+                <p className="p-2">現在の参加者</p>
+              </div>
               {list.map(({ name, id }) => {
                 return <li key={id}>{name}</li>;
               })}
-            </>
+            </div>
           );
         } else {
           return (
-            <>
-              <p>名前を登録して参加</p>
-              <input id="submitNewPlayer" type="text" />
-              <button onClick={handlesubmitNewPlayer}>Submit</button>
-            </>
+            <div className="grid place-content-center p-10">
+              <div>
+                <p className="p-2">名前を登録して参加</p>
+              </div>
+              <div className="place-content-center">
+                <input
+                  className="border-2 border-gray-300 rounded-xl p-2"
+                  id="submitNewPlayer"
+                  type="text"
+                />
+                <button
+                  className="p-2 m-2 bg-green-500 text-white rounded-xl"
+                  onClick={handlesubmitNewPlayer}
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
           );
         }
       })()}
